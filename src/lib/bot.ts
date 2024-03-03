@@ -12,7 +12,7 @@ const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!!;
 const bot = new Telegraf(BOT_TOKEN);
 
 bot.start((ctx) => {
-  ctx.reply("Let's get started ;)", {
+  ctx.reply("Let's get started", {
     reply_markup: {
       keyboard: [
         ["Coffee & Sweet", "Foods & Drinks"],
