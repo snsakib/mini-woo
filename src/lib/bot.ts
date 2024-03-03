@@ -16,12 +16,18 @@ bot.start((ctx) => {
     reply_markup: {
       inline_keyboard: [
         [
-          { text: "Change Bot Language", callback_data: "changelanguage" },
+          { text: "Change Bot Language", callback_data: "/changelanguage" },
           {
             text: "Find Stores Near Me",
             url: "https://www.google.com/maps/search/stores+near+me",
           },
         ],
+      ],
+      keyboard: [
+        ["Coffee & Sweet", "Foods & Drinks"],
+        ["Area Shops"],
+        ["My Location"],
+        ["Profile", "T&C"],
       ],
     },
   });
@@ -34,10 +40,6 @@ bot.command("menu", (ctx) =>
     web_app: { url: BASE_PATH },
   })
 );
-bot.on(message("text"), (ctx) =>
-  ctx.reply("Hi, I`m Mini Woo. It`s nice to meet you!:) /help")
-);
-
 bot.command("changelanguage", async (ctx) => {
   await ctx.reply("Select your preferred language:", {
     reply_markup: {
@@ -52,6 +54,10 @@ bot.command("changelanguage", async (ctx) => {
     },
   });
 });
+
+bot.on(message("text"), (ctx) =>
+  ctx.reply("Hi, I`m Mini Woo. It`s nice to meet you!:) /help")
+);
 
 bot.on("shipping_query", async (ctx) => {
   const payload = JSON.parse(ctx.update.shipping_query.invoice_payload);
