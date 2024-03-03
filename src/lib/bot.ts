@@ -22,20 +22,6 @@ bot.start((ctx) => {
       ],
     },
   });
-
-  ctx.reply("", {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          { text: "Change Bot Language", callback_data: "/changelanguage" },
-          {
-            text: "Find Stores Near Me",
-            url: "https://www.google.com/maps/search/stores+near+me",
-          },
-        ],
-      ],
-    },
-  });
 });
 bot.help((ctx) => ctx.reply("Test /start or /menu command!"));
 bot.command("menu", (ctx) =>
