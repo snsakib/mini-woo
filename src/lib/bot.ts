@@ -23,7 +23,7 @@ bot.start((ctx) => {
     },
   });
 });
-bot.help((ctx) => ctx.reply("Test /start or /menu command!"));
+bot.help((ctx) => ctx.reply("Type /start or /menu command!"));
 bot.command("menu", (ctx) =>
   ctx.setChatMenuButton({
     text: "Store",
@@ -47,7 +47,7 @@ bot.command("changelanguage", async (ctx) => {
 });
 
 bot.on(message("text"), (ctx) =>
-  ctx.reply("Hi, I`m Mini Woo. It`s nice to meet you!:) /help")
+  ctx.reply("Hi, I`m KazBot. Please type /help")
 );
 
 bot.on("shipping_query", async (ctx) => {
