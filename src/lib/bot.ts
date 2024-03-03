@@ -14,6 +14,17 @@ const bot = new Telegraf(BOT_TOKEN);
 bot.start((ctx) => {
   ctx.reply("Let's get started ;)", {
     reply_markup: {
+      keyboard: [
+        ["Coffee & Sweet", "Foods & Drinks"],
+        ["Area Shops"],
+        ["My Location"],
+        ["Profile", "T&C"],
+      ],
+    },
+  });
+
+  ctx.reply("", {
+    reply_markup: {
       inline_keyboard: [
         [
           { text: "Change Bot Language", callback_data: "/changelanguage" },
@@ -22,12 +33,6 @@ bot.start((ctx) => {
             url: "https://www.google.com/maps/search/stores+near+me",
           },
         ],
-      ],
-      keyboard: [
-        ["Coffee & Sweet", "Foods & Drinks"],
-        ["Area Shops"],
-        ["My Location"],
-        ["Profile", "T&C"],
       ],
     },
   });
