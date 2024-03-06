@@ -1,0 +1,13 @@
+.menu {
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

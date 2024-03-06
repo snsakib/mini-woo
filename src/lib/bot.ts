@@ -15,7 +15,7 @@ bot.start((ctx) => {
   ctx.reply("Let's get started", {
     reply_markup: {
       keyboard: [
-        ["Home", "Coffee & Sweet", "Foods & Drinks"],
+        ["Coffee & Sweet", "Foods & Drinks"],
         ["Area Shops", "My Location"],
         ["Profile", "T&C"],
       ],
