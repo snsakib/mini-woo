@@ -5,7 +5,7 @@ import { useAppContext } from "@/providers/context-provider";
 import StoreFront from "@/components/store-front";
 import OrderOverview from "@/components/order-overview";
 import ProductOverview from "@/components/product-overview";
-import Header from "@/components/header";
+// import Header from "@/components/header";
 
 export default function Home() {
   const { webApp, user } = useTelegram();
@@ -93,7 +93,7 @@ export default function Home() {
 
   return (
     <main className={`${state.mode}-mode`}>
-      <Header />
+      {/* <Header /> */}
       <StoreFront />
       <ProductOverview />
       <OrderOverview />
