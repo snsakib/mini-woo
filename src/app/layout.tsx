@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { TelegramProvider } from "@/providers/telegram-provider";
 import { ContextProvider } from "@/providers/context-provider";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 // export const metadata: Metadata = {
 //   title: "MiniWoo",
@@ -30,15 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body>
         <TelegramProvider>
           <ContextProvider>
             <div className="menu">
-              <div className="back-btn" onClick={router.back}>
-                &#11013;
-              </div>
+              {pathname !== "/" && (
+                <button className="back-btn" onClick={() => router.back()}>
+                  &#11013;
+                </button>
+              )}
               <Link href="/" className="back-btn">
                 Home
               </Link>
