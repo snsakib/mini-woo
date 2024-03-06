@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
@@ -10,13 +9,13 @@ export default function Header() {
   return (
     <div className="menu">
       {pathname !== "/" && (
-        <button className="back-btn" onClick={() => router.back()}>
+        <button className="menu-btn" onClick={() => router.back()}>
           &#11013;
         </button>
       )}
-      <Link href="/" className="back-btn">
+      <button className="menu-btn" onClick={() => router.push("/")}>
         Home
-      </Link>
+      </button>
     </div>
   );
 }
